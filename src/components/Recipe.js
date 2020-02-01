@@ -70,9 +70,9 @@ const Recipe = () => {
       </Flex>
       <Flex justifyContent="center">
         <Box as="form" onSubmit={startTimer} py={3}>
-          <Flex mx={-2} mb={3}>
-            <Box width={1 / 2} px={2}>
-              <Label htmlFor="ratio">Grams</Label>
+          <Flex flexDirection={["column", "column", "row"]} mx={-2} mb={3}>
+            <Box width={[1, 1, 1 / 3]} px={2}>
+              <Label htmlFor="grams">Grams (coffee)</Label>
               <Input
                 id="grams"
                 onChange={e => setGrams(e.target.value)}
@@ -82,8 +82,8 @@ const Recipe = () => {
                 value={grams}
               />
             </Box>
-            <Box width={1 / 2} px={2}>
-              <Label htmlFor="ratio">Ratio</Label>
+            <Box width={[1, 1, 1 / 3]} px={2}>
+              <Label htmlFor="ratio">Ratio (Water to Coffee)</Label>
               <Input
                 id="ratio"
                 ratio="ratio"
@@ -93,7 +93,7 @@ const Recipe = () => {
                 value={ratio}
               />
             </Box>
-            <Box width={1 / 2} px={2}>
+            <Box width={[1, 1, 1 / 3]} px={2}>
               <Label htmlFor="time">Time (in minutes)</Label>
               <Input
                 id="time"
