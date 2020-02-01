@@ -2,29 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Flex, Text, Box, Button } from "rebass";
 import { Label, Input } from "@rebass/forms";
 import { useParams } from "react-router-dom";
+import { convertSeconds, convertToName } from "../utils/convert";
 
 const Recipe = () => {
-  const convertToName = name =>
-    name
-      .split("-")
-      .map(word => word[0].toUpperCase() + word.slice(1))
-      .join(" ");
-  const convertSeconds = time => {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    if (minutes < 1) {
-      minutes = "00";
-    }
-    if (seconds < 10) {
-      seconds = "0" + seconds;
-    }
-    if (seconds === 0) {
-      seconds = "00";
-    }
-
-    return `${minutes}:${seconds}`;
-  };
-
   let { recipeId } = useParams();
   const [recipe, setRecipe] = useState("");
   const [grams, setGrams] = useState(20);
@@ -70,9 +50,9 @@ const Recipe = () => {
       </Flex>
       <Flex justifyContent="center">
         <Box as="form" onSubmit={startTimer} py={3}>
-          <Flex mx={-2} mb={3}>
-            <Box width={1 / 2} px={2}>
-              <Label htmlFor="ratio">Grams</Label>
+          <Flex flexDirection={["column", "column", "row"]} mx={-2} mb={3}>
+            <Box width={[1, 1, 1 / 3]} px={2}>
+              <Label htmlFor="grams">Grams (coffee)</Label>
               <Input
                 id="grams"
                 onChange={e => setGrams(e.target.value)}
@@ -82,8 +62,8 @@ const Recipe = () => {
                 value={grams}
               />
             </Box>
-            <Box width={1 / 2} px={2}>
-              <Label htmlFor="ratio">Ratio</Label>
+            <Box width={[1, 1, 1 / 3]} px={2}>
+              <Label htmlFor="ratio">Ratio (Water to Coffee)</Label>
               <Input
                 id="ratio"
                 ratio="ratio"
@@ -93,7 +73,7 @@ const Recipe = () => {
                 value={ratio}
               />
             </Box>
-            <Box width={1 / 2} px={2}>
+            <Box width={[1, 1, 1 / 3]} px={2}>
               <Label htmlFor="time">Time (in minutes)</Label>
               <Input
                 id="time"
