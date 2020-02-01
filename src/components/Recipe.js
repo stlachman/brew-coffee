@@ -2,29 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Flex, Text, Box, Button } from "rebass";
 import { Label, Input } from "@rebass/forms";
 import { useParams } from "react-router-dom";
+import { convertSeconds, convertToName } from "../utils/convert";
 
 const Recipe = () => {
-  const convertToName = name =>
-    name
-      .split("-")
-      .map(word => word[0].toUpperCase() + word.slice(1))
-      .join(" ");
-  const convertSeconds = time => {
-    let minutes = Math.floor(time / 60);
-    let seconds = time % 60;
-    if (minutes < 1) {
-      minutes = "00";
-    }
-    if (seconds < 10) {
-      seconds = "0" + seconds;
-    }
-    if (seconds === 0) {
-      seconds = "00";
-    }
-
-    return `${minutes}:${seconds}`;
-  };
-
   let { recipeId } = useParams();
   const [recipe, setRecipe] = useState("");
   const [grams, setGrams] = useState(20);
