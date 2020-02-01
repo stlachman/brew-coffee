@@ -8,8 +8,8 @@ const Navigation = () => {
       <Link mx={2} color="white" as={NavLink} to="/">
         Home
       </Link>
-      <Link mx={2} color="white" as={NavLink} to="/methods">
-        Methods
+      <Link mx={2} color="white" as={NavLink} to="/recipes">
+        Recipes
       </Link>
       <Box mx="auto" />
       {/* <Link color="white" as={NavLink} to="/profile">

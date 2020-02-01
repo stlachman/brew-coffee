@@ -2,15 +2,15 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Landing from "./components/Landing";
-import Brew from "./components/Brew";
+import Recipes from "./components/Recipes";
 
 function App() {
   return (
     <Router>
       <Layout>
         <Switch>
-          <Route path="/methods">
-            <Brew />
+          <Route path="/recipes">
+            <Recipes />
           </Route>
           <Route path="/">
             <Landing />

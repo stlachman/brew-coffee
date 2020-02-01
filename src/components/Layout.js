@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <Flex
         minHeight="100vh"
         maxWidth="960px"
-        margin="0 auto"
+        margin="20px auto"
         flexDirection="column"
         as="main"
       >
