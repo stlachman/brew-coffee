@@ -19,14 +19,12 @@ const Recipes = () => {
   const brews = [
     { name: "Chemex" },
     { name: "Hario V60" },
-    { name: "French Press" }
+    { name: "French Press" },
+    { name: "Clever" }
   ];
   return (
     <>
-      <Text as="h2" textAlign="center">
-        Recipes
-      </Text>
-      <Flex mx={-2}>
+      <Flex mx={-2} marginBottom={4}>
         {brews.map(brew => {
           return (
             <Card width={1 / 2} px={2} key={brew.name}>
@@ -47,7 +45,7 @@ const Recipes = () => {
           <Recipe />
         </Route>
         <Route path={match.path}>
-          <h3>Please select a recipe.</h3>
+          <Text>Please select a recipe.</Text>
         </Route>
       </Switch>
     </>
