@@ -11,7 +11,7 @@ function App() {
       <Theme>
         <Layout>
           <Switch>
-            <Route path="/recipes">
+            <Route path="/brewing-methods">
               <Recipes />
             </Route>
             <Route path="/">

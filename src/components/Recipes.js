@@ -24,10 +24,17 @@ const Recipes = () => {
   ];
   return (
     <>
-      <Flex mx={-2} marginBottom={4}>
+      <Flex mx={-2} flexWrap="wrap" marginBottom={4}>
         {brews.map(brew => {
           return (
-            <Card width={1 / 2} px={2} key={brew.name}>
+            <Card
+              width={[1, 1, 1 / 2]}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+              px={2}
+              key={brew.name}
+            >
               <Text as="h3">
                 <Link
                   as={LinkText}

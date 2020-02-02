@@ -8,13 +8,10 @@ const Navigation = () => {
       <Link mx={2} color="white" as={NavLink} to="/">
         Home
       </Link>
-      <Link mx={2} color="white" as={NavLink} to="/recipes">
-        Recipes
+      <Link mx={2} color="white" as={NavLink} to="/brewing-methods">
+        Brewing Methods
       </Link>
       <Box mx="auto" />
-      {/* <Link color="white" as={NavLink} to="/profile">
-        Profile
-      </Link> */}
     </Flex>
   );
 };
